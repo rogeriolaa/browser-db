@@ -1,0 +1,54 @@
+{
+  "name": "@n0n3br/browser-db",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./min": {
+      "import": "./dist/index.min.mjs",
+      "require": "./dist/index.min.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --out-dir dist && tsup src/index.ts --format cjs,esm --dts --clean false --minify",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rm -rf dist",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["browser", "database", "indexeddb", "storage"],
+  "author": "n0n3br",
+  "license": "ISC",
+  "description": "A lightweight and efficient browser database library using IndexedDB",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogeriolaa/browser-db.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogeriolaa/browser-db/issues"
+  },
+  "homepage": "https://github.com/rogeriolaa/browser-db#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "fake-indexeddb": "^6.0.0",
+    "jsdom": "^26.0.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}
