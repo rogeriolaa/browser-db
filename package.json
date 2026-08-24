@@ -31,7 +31,12 @@
     "test": "vitest",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["browser", "database", "indexeddb", "storage"],
+  "keywords": [
+    "browser",
+    "database",
+    "indexeddb",
+    "storage"
+  ],
   "author": "n0n3br",
   "license": "ISC",
   "description": "A lightweight and efficient browser database library using IndexedDB",
@@ -49,6 +54,6 @@
     "jsdom": "^26.0.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.0"
   }
 }
